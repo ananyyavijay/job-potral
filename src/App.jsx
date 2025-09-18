@@ -1,35 +1,59 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ThemeProvider } from "./components/ui/theme-provider";
+
+import AppLayout from "./layout/AppLayout";
+import LandingPage from "./pages/LandingPage";
+import Onboarding from "./pages/Onboarding";
+import Job from "./pages/Job";
+import JobListing from "./pages/JobListing";
+import MyJobs from "./pages/MyJobs";
+import PostJob from "./pages/PostJob";
+import SaveedJob from "./pages/SaveedJob";
+
+import "./App.css";
+
+const router = createBrowserRouter([
+  {
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/",
+        element: <LandingPage />,
+      },
+      {
+        path: "/onboarding",
+        element: <Onboarding />,
+      },
+      {
+        path: "/job/:id",
+        element: <Job />,
+      },
+      {
+        path: "/job-listing",
+        element: <JobListing />,
+      },
+      {
+        path: "/my-jobs",
+        element: <MyJobs />,
+      },
+      {
+        path: "/post-job",
+        element: <PostJob />,
+      },
+      {
+        path: "/saved-jobs",
+        element: <SaveedJob />,
+      },
+    ],
+  },
+]);
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
