@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { ThemeProvider } from "./components/ui/theme-provider";
+import { ThemeProvider } from "./components/theme-provider";
 
 import AppLayout from "./layout/AppLayout";
 import LandingPage from "./pages/LandingPage";
@@ -11,7 +11,8 @@ import PostJob from "./pages/PostJob";
 import SaveedJob from "./pages/SaveedJob";
 
 import "./App.css";
-import ProtectedRoute from "./components/ui/protected-route";
+import ProtectedRoute from "./components/protected-route";
+
 
 const router = createBrowserRouter([
   {
