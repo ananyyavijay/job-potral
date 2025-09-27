@@ -5,7 +5,7 @@ export async function getJobs(token, { location, company_id, searchQuery }) {
   const supabase = await supabaseClient(token);
   let query = supabase
     .from("jobs")
-    .select("*, company: companies(name,logo_url)");
+    .select("*, company: companies(name,logo_url), saved: saved_job(id)");
 
   if (location) {
     query = query.eq("location", location);
@@ -29,15 +29,15 @@ export async function getJobs(token, { location, company_id, searchQuery }) {
   return data;
 }
 
-// Read Saved Jobs
+// Read saved_job
 export async function getSavedJobs(token) {
   const supabase = await supabaseClient(token);
   const { data, error } = await supabase
-    .from("saved jobs")
+    .from("saved_job")
     .select("*, job: jobs(*, company: companies(name,logo_url))");
 
   if (error) {
-    console.error("Error fetching Saved Jobs:", error);
+    console.error("Error fetching saved_job:", error);
     return null;
   }
 
@@ -72,7 +72,7 @@ export async function saveJob(token, { alreadySaved }, saveData) {
   if (alreadySaved) {
     // If the job is already saved, remove it
     const { data, error: deleteError } = await supabase
-      .from("saved jobs")
+      .from("saved_job")
       .delete()
       .eq("job_id", saveData.job_id);
 
@@ -83,9 +83,9 @@ export async function saveJob(token, { alreadySaved }, saveData) {
 
     return data;
   } else {
-    // If the job is not saved, add it to saved jobs
+    // If the job is not saved, add it to saved_job
     const { data, error: insertError } = await supabase
-      .from("saved jobs")
+      .from("saved_job")
       .insert([saveData])
       .select();
 

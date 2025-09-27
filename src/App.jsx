@@ -4,14 +4,15 @@ import { ThemeProvider } from "./components/theme-provider";
 import AppLayout from "./layout/AppLayout";
 import LandingPage from "./pages/LandingPage";
 import Onboarding from "./pages/Onboarding";
-import Job from "./pages/Job";
 import JobListing from "./pages/JobListing";
 import MyJobs from "./pages/MyJobs";
 import PostJob from "./pages/PostJob";
 import SaveedJob from "./pages/SaveedJob";
+import JobPages from "./pages/Job";
 
 import "./App.css";
 import ProtectedRoute from "./components/protected-route";
+
 
 
 const router = createBrowserRouter([
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
         path: "/job/:id",
         element: (
           <ProtectedRoute>
-            <Job />
+            <JobPages />
           </ProtectedRoute>
         ),
       },
