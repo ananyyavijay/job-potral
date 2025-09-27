@@ -30,12 +30,12 @@ const Header = () => {
   };
     return (
     <>
-      <nav className="py-4 flex justify-between items-center">
+      <nav className="py-2 flex justify-between items-center">
         <Link to="/">
-          <img src="/logo.png" className="h-20" alt="Hirrd Logo" />
+          <img src="/JobPortal_Logo.png" className="h-25 mt-3" alt="Hirrd Logo" />
         </Link>
 
-        <div className="flex gap-8">
+        <div className="flex gap-6">
           <SignedOut>
             <Button variant="outline" onClick={() => setShowSignIn(true)}>
               Login
