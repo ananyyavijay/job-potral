@@ -42,11 +42,11 @@ npm install
 
 Create a .env.local file in the root and add:
 
-# Clerk
+## Clerk
 VITE_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
 CLERK_SECRET_KEY=your_clerk_secret_key
 
-# Supabase
+## Supabase
 VITE_SUPABASE_URL=your_supabase_project_url
 VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 
@@ -58,18 +58,19 @@ Supabase Project → https://supabase.com/dashboard
 
 ---
 
-##🚀 Deployment
+## 🚀 Deployment
 
-The project is deployed on Vercel.
+The project is deployed on **Vercel**.  
 To deploy your own version:
 
--Push your repo to GitHub.
--Go to Vercel
--Import your repo.
--Add the same environment variables in Vercel Project Settings → Environment Variables.
--Deploy 🎉.
+1. Push your repo to GitHub.  
+2. Go to [Vercel](https://vercel.com/).  
+3. Import your repo.  
+4. Add the same environment variables in **Vercel Project Settings → Environment Variables**.  
+5. Deploy 🎉.
 
-Live Demo: 👉 careerixjobs-bmd9voyyc-withmates.vercel.app
+Live Demo: 👉 [https://careerixjobs.vercel.app](careerixjobs-ayggpvzoq-withmates.vercel.app)
+
 
 ---
 
