@@ -69,7 +69,7 @@ To deploy your own version:
 4. Add the same environment variables in **Vercel Project Settings → Environment Variables**.  
 5. Deploy 🎉.
 
-Live Demo: 👉 [https://careerixjobs.vercel.app](careerixjobs-ayggpvzoq-withmates.vercel.app)
+Live Demo: 👉 [https://careerixjobs.vercel.app](careerixjobs-git-main-withmates.vercel.app)
 
 
 ---
@@ -110,7 +110,7 @@ Docs: [https://ui.shadcn.com](https://ui.shadcn.com)
 
 ## 🌐 Links
 
-- Live Site: [https://careerixjobs.vercel.app](careerixjobs-bmd9voyyc-withmates.vercel.app)  
+- Live Site: [https://careerixjobs.vercel.app](careerixjobs-git-main-withmates.vercel.app)  
 - Clerk Dashboard: [https://dashboard.clerk.com](https://dashboard.clerk.com)  
 - Supabase Dashboard: [https://supabase.com/dashboard](https://supabase.com/dashboard)  
 - shadcn/ui Docs: [https://ui.shadcn.com](https://ui.shadcn.com)  
